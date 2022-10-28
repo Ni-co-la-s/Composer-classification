@@ -18,5 +18,17 @@ In utils.py, change if needed the root_dir elements, the duration of the extract
 In order, use:
 -edit_csv.py to filter out the duplicates and choose the composers to keep in the csv
 -creation_extracts.py to create the training and validation wav files
--audio_processing.py to create the pickle files with the mfcc/chroma vectors
+-audio_processing.py to create the pickle files with the mfcc/chroma vectors and perform data augmentation
 -grid_search_svm.py to find the optimal parameters for the SVM
+
+# Results
+
+To evaluate the results of the model, the pieces were split in a 80/20 training-testing/validation. So the extracts used in the validation were not an influence during the training.
+For 4 composers (Liszt, Mozart, Brahms and Bach), we obtain a 60% accuracy, which is a lot better than the 25% we would obtain randomly.
+|![classification_composer](https://user-images.githubusercontent.com/96898279/198711677-0ad44e7f-1f62-475e-86ce-c40f5688e162.png)
+|:--:| 
+| *Figure 1: Confusion matrix for the SVM model* |
+
+
+
+
